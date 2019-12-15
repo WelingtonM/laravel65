@@ -18,4 +18,6 @@ Route::get('/', function () {
 Route::get('/clients', 'ClientsController@index')->name('list');
 Route::get('/clients/create', 'ClientsController@create')->name('create');
 Route::post('/clients/store', 'ClientsController@store')->name('store');
+Route::get('/clients/{id}/edit', 'ClientsController@edit')->name('edit');
+Route::post('/clients/{id}/update', 'ClientsController@update')->name('update');
 

@@ -13,6 +13,7 @@
 				<th>ID</th>
 				<th>Name</th>
 				<th>E-mail</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,6 +22,10 @@
 				<td>{{$client->id}}</td>
 				<td>{{$client->name}}</td>
 				<td>{{$client->email}}</td>
+				<td>
+					<a href="/clients/{{$client->id}}/edit">Edit</a> |
+					<a href="/clients/{{$client->id}}/destroy">Delete</a>
+				</td>
 			</tr>
 			@endforeach
 		</tbody>

@@ -62,7 +62,11 @@ class ClientsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $client = Client::find($id);
+        if (!$client) {
+            abort(404);
+        }
+        return view('clients.edit', compact('client'));
     }
 
     /**
@@ -74,7 +78,14 @@ class ClientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $client = Client::find($id);
+        if (!$client) {
+            abort(404);
+        }
+        $client->name = $request->name;
+        $client->email = $request->email;
+        $client->save();
+        return redirect()->to('/clients');
     }
 
     /**
