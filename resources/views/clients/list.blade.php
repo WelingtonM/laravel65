@@ -6,6 +6,7 @@
 <body>
 	@csrf
 	<h1>Client List</h1>
+	<a href="/clients/create">New Client</a>
 	<table>
 		<thead>
 			<tr>

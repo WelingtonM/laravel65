@@ -25,7 +25,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        
+        return view('clients.create');
     }
 
     /**
@@ -36,7 +36,11 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $client = new Client();
+        $client->name = $request->name;
+        $client->email = $request->email;
+        $client->save();
+        return redirect()->to('/clients');
     }
 
     /**
