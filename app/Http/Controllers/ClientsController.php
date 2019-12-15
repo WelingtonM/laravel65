@@ -94,8 +94,13 @@ class ClientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $client = Client::find($id);
+        if (!$client) {
+            abort(404);
+        }
+        $client->delete();
+        return redirect()->to('/clients');
     }
 }

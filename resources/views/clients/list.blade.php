@@ -24,7 +24,7 @@
 				<td>{{$client->email}}</td>
 				<td>
 					<a href="/clients/{{$client->id}}/edit">Edit</a> |
-					<a href="/clients/{{$client->id}}/destroy">Delete</a>
+					<a href="/clients/{{$client->id}}/delete">Delete</a>
 				</td>
 			</tr>
 			@endforeach
